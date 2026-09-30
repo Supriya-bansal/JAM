@@ -19,6 +19,10 @@ export class ApplicationService {
     });
   }
 
+  resetApplications() {
+    return this.http.post(`${this.api}/reset`, {});
+  }
+
   updateStatus(id: number, status: Application['status']) {
     this.http.patch(`${this.api}/${id}/status`, { status }).subscribe(() => {
       const updated = this.applications().map((app) =>
