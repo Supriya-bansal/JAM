@@ -49,4 +49,30 @@ router.patch('/:id/status', (req, res) => {
   });
 });
 
+router.post('/reset', (_req, res) => {
+  const applications = readJson<any[]>(
+      'applications.json'
+  );
+
+  const resetApplications = applications.map(app => ({
+    ...app,
+    status: 'Pending',
+    applied: false,
+    appliedDate: null,
+    responseReceived: false,
+    responseDate: null,
+    responseSummary: null,
+  }));
+
+  writeJson(
+      'applications.json',
+      resetApplications
+  );
+
+  res.json({
+    success: true,
+    message: 'All application statuses reset',
+  });
+});
+
 export default router;
