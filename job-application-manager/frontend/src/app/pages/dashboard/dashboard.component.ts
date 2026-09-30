@@ -125,4 +125,16 @@ export class DashboardComponent {
   saveAttachments() {
     this.attachmentService.saveAttachments().subscribe();
   }
+
+  resetApplications() {
+    const confirmed = confirm('Reset all applications back to Pending?');
+
+    if (!confirmed) {
+      return;
+    }
+
+    this.applicationService.resetApplications().subscribe(() => {
+      this.applicationService.loadApplications();
+    });
+  }
 }
