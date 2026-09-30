@@ -41,75 +41,53 @@
   </div>
 
   @if (showSettings()) {
-
     <mat-card class="settings-card">
-
       <div class="settings-header">
         <h2>Settings</h2>
       </div>
 
       <div class="settings-content">
-
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="saveAttachments()">
-
+        <button mat-raised-button color="primary" (click)="saveAttachments()">
           Save Attachments
-
         </button>
 
-        <mat-form-field
-          appearance="outline"
-          class="template-select">
-
+        <mat-form-field appearance="outline" class="template-select">
           <mat-label>Template</mat-label>
 
           <mat-select
             [value]="selectedTemplateId()"
-            (selectionChange)="selectedTemplateId.set($event.value)">
-
+            (selectionChange)="selectedTemplateId.set($event.value)"
+          >
             @for (template of templates(); track template.id) {
-
               <mat-option [value]="template.id">
                 {{ template.name }}
               </mat-option>
-
             }
-
           </mat-select>
-
         </mat-form-field>
 
         <div class="attachments-section">
-
-          <div class="section-label">
-            Default Attachments
-          </div>
+          <div class="section-label">Default Attachments</div>
 
           <div class="attachments-grid">
-
             @for (attachment of attachments(); track attachment.id) {
-
               <mat-checkbox
                 [checked]="attachment.selected"
                 (change)="toggleAttachment(attachment.id)"
               >
-
                 {{ attachment.name }}
-
               </mat-checkbox>
-
             }
-
           </div>
-
         </div>
 
+        <button mat-raised-button color="warn" (click)="resetApplications()">
+          <mat-icon>restart_alt</mat-icon>
+
+          Reset Applications
+        </button>
       </div>
-
     </mat-card>
-
   }
 
   <div class="application-list">
