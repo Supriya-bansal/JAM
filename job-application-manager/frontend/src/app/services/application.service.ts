@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { Application } from '../models/application';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApplicationService {
-  private readonly api = 'http://localhost:3000/api/applications';
+  private readonly api = `${environment.apiUrl}/applications`;
 
   applications = signal<Application[]>([]);
 
