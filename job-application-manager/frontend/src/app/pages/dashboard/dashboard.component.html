@@ -1,0 +1,193 @@
+<div class="dashboard">
+  <header class="header">
+    @let _applications = applications();
+    <div>
+      <h1>🏥 Job Application Manager</h1>
+      <p>{{ _applications.length }} Applications</p>
+    </div>
+
+    <div class="header-actions">
+      <button mat-stroked-button (click)="showSettings.set(!showSettings())">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </button>
+
+      <button mat-raised-button color="primary" (click)="applyAll()">
+        <mat-icon>send</mat-icon>
+        Apply All
+      </button>
+    </div>
+  </header>
+
+  <div class="stats">
+    <mat-card class="stat-card">
+      <span class="label">Total</span>
+      <span>{{ _applications.length }}</span>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <span class="label">Pending</span>
+      <span>
+        {{ _applications.filter((a) => a.status === 'Pending').length }}
+      </span>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <span class="label">Applied</span>
+      <span>
+        {{ _applications.filter((a) => a.status === 'Applied').length }}
+      </span>
+    </mat-card>
+  </div>
+
+  @if (showSettings()) {
+
+    <mat-card class="settings-card">
+
+      <div class="settings-header">
+        <h2>Settings</h2>
+      </div>
+
+      <div class="settings-content">
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="saveAttachments()">
+
+          Save Attachments
+
+        </button>
+
+        <mat-form-field
+          appearance="outline"
+          class="template-select">
+
+          <mat-label>Template</mat-label>
+
+          <mat-select
+            [value]="selectedTemplateId()"
+            (selectionChange)="selectedTemplateId.set($event.value)">
+
+            @for (template of templates(); track template.id) {
+
+              <mat-option [value]="template.id">
+                {{ template.name }}
+              </mat-option>
+
+            }
+
+          </mat-select>
+
+        </mat-form-field>
+
+        <div class="attachments-section">
+
+          <div class="section-label">
+            Default Attachments
+          </div>
+
+          <div class="attachments-grid">
+
+            @for (attachment of attachments(); track attachment.id) {
+
+              <mat-checkbox
+                [checked]="attachment.selected"
+                (change)="toggleAttachment(attachment.id)"
+              >
+
+                {{ attachment.name }}
+
+              </mat-checkbox>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </mat-card>
+
+  }
+
+  <div class="application-list">
+    @for (app of applicationsSorted(); track app.id) {
+      <mat-card class="application-card">
+        <div class="left">
+          <div class="title">
+            {{ app.hospital }}
+          </div>
+
+          <div class="subtitle">
+            {{ app.position }}
+          </div>
+
+          <div class="meta">📍 {{ app.location }}</div>
+
+          <div class="meta">🩺 {{ app.specialty }}</div>
+
+          @for (contact of app.contacts; track contact.email) {
+            <div class="meta">✉️ {{ contact.email }}</div>
+          }
+        </div>
+
+        <div class="right">
+          <div class="priority">Priority #{{ app.priority }}</div>
+
+          <div
+            class="status"
+            [class.pending]="app.status === 'Pending'"
+            [class.applied]="app.status === 'Applied'"
+            [class.interview]="app.status === 'Interview'"
+            [class.offer]="app.status === 'Offer'"
+            [class.rejected]="app.status === 'Rejected'"
+          >
+            {{ app.status }}
+          </div>
+
+          <div class="actions">
+            @if (app.status === 'Pending') {
+              <a
+                mat-raised-button
+                color="primary"
+                [href]="buildMailto(app)"
+                (click)="apply(app.id)"
+              >
+                <mat-icon>send</mat-icon>
+                Apply
+              </a>
+            }
+
+            @if (app.status !== 'Interview') {
+              <button mat-stroked-button color="accent" (click)="markInterview(app.id)">
+                <mat-icon>groups</mat-icon>
+                Interview
+              </button>
+            }
+
+            @if (app.status !== 'Offer') {
+              <button mat-stroked-button color="primary" (click)="markOffer(app.id)">
+                <mat-icon>workspace_premium</mat-icon>
+                Offer
+              </button>
+            }
+
+            @if (app.status !== 'Rejected') {
+              <button mat-stroked-button color="warn" (click)="markRejected(app.id)">
+                <mat-icon>cancel</mat-icon>
+                Reject
+              </button>
+            }
+
+            <a mat-stroked-button color="primary" [href]="app.applicationUrl" target="_blank">
+              <mat-icon>open_in_new</mat-icon>
+              View Job
+            </a>
+          </div>
+        </div>
+      </mat-card>
+    }
+  </div>
+</div>

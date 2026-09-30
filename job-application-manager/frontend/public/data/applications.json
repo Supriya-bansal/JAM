@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "hospital": "St. Marien-Krankenhaus Ahaus / Klinikum Westmünsterland",
+    "location": "Ahaus",
+    "position": "Assistenzarzt (m/w/d) – Akutgeriatrie und Frührehabilitation",
+    "specialty": "Akutgeriatrie & Frührehabilitation",
+    "employmentType": "Vollzeit",
+    "startDate": "Nächstmöglicher Zeitpunkt",
+    "contacts": [
+      {
+        "name": "Dr. med. Christiane Bäcker",
+        "role": "Chefärztin",
+        "phone": "02561 99-23509",
+        "email": "bewerbung@kwml.de",
+        "preferred": true
+      }
+    ],
+    "applicationUrl": "https://jobs.klinikum-westmuensterland.de/stellenangebote/648597420",
+    "status": "Applied",
+    "priority": 1,
+    "applied": true,
+    "appliedDate": "2026-09-29T23:29:26.063Z",
+    "responseReceived": false,
+    "responseDate": null,
+    "responseSummary": null,
+    "selectedTemplate": "Assistenzarzt Standard",
+    "notes": ""
+  },
+  {
+    "id": 2,
+    "hospital": "St. Marien-Hospital Lüdinghausen",
+    "location": "Lüdinghausen",
+    "position": "Assistenzarzt (m/w/d) – Innere Medizin",
+    "specialty": "Innere Medizin",
+    "contacts": [
+      {
+        "name": "Dr. Thomas Schumacher",
+        "role": "Chefarzt Innere Medizin",
+        "email": "thomas.schumacher@smh-luedinghausen.de",
+        "phone": "02591 231-267",
+        "preferred": true
+      }
+    ],
+    "applicationUrl": "https://dkm-stellenmarkt.helixjobs.com/_/jobad?loc=13207&prj=1569P119969",
+    "status": "Applied",
+    "priority": 2,
+    "applied": true,
+    "appliedDate": "2026-09-29T23:37:36.531Z",
+    "responseReceived": false,
+    "selectedTemplate": "Assistenzarzt Standard"
+  },
+  {
+    "id": 3,
+    "hospital": "St. Marien-Hospital Borken / Klinikum Westmünsterland",
+    "location": "Borken",
+    "position": "Assistenzarzt (m/w/d) – Innere Medizin",
+    "specialty": "Innere Medizin",
+    "contacts": [
+      {
+        "email": "innere-medizin@hospital-borken.de",
+        "preferred": true
+      },
+      {
+        "email": "bewerbung@kwml.de",
+        "preferred": true
+      }
+    ],
+    "applicationUrl": "https://jobs.klinikum-westmuensterland.de/stellenangebote/362719454",
+    "status": "Applied",
+    "priority": 3,
+    "applied": true,
+    "responseReceived": false,
+    "selectedTemplate": "Assistenzarzt Standard",
+    "appliedDate": "2026-09-30T00:27:47.033Z"
+  },
+  {
+    "id": 4,
+    "hospital": "Klinikum Ibbenbüren / Mathias-Stiftung",
+    "location": "Ibbenbüren",
+    "position": "Assistenzarzt (m/w/d) – Innere Medizin / Pneumologie",
+    "specialty": "Innere Medizin / Pneumologie",
+    "contacts": [
+      {
+        "name": "Dr. med. Nicolas Dickgreber",
+        "role": "Chefarzt",
+        "email": "n.dickgreber@mathias-stiftung.de",
+        "phone": "05971 42-4370",
+        "preferred": true
+      }
+    ],
+    "applicationUrl": "https://www.mathias-karriere.de/stellenangebote/stelle/assistenzarzt-m-w-d-innere-medizin-pneumologie-26ibb151",
+    "status": "Applied",
+    "priority": 4,
+    "applied": true,
+    "responseReceived": false,
+    "selectedTemplate": "Assistenzarzt Standard",
+    "appliedDate": "2026-09-29T23:30:13.788Z"
+  },
+  {
+    "id": 5,
+    "hospital": "Klinikum Gütersloh",
+    "location": "Gütersloh",
+    "position": "Assistenzarzt (m/w/d) – Zentrum für Innere Medizin",
+    "specialty": "Innere Medizin",
+    "contacts": [
+      {
+        "email": "info@klinikum-guetersloh.de",
+        "preferred": true
+      }
+    ],
+    "applicationUrl": "https://www.klinikum-guetersloh.de/karriere/aerztlicher-dienst",
+    "status": "Applied",
+    "priority": 5,
+    "applied": true,
+    "responseReceived": false,
+    "selectedTemplate": "Assistenzarzt Standard",
+    "appliedDate": "2026-09-30T00:27:47.035Z"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "defaultTemplate": "assistant-standard",
+  "autoMarkApplied": true,
+  "followUpAfterDays": 14,
+  "defaultSenderName": "Supriya Bansal",
+  "defaultAttachments": [
+    "cv",
+    "cover-letter",
+    "approbation"
+  ]
+}

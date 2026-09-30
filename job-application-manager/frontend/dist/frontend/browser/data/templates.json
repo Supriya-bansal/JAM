@@ -1,0 +1,8 @@
+[
+  {
+    "id": "assistant-standard",
+    "name": "Assistenzarzt Standard",
+    "subject": "Bewerbung als {{position}}",
+    "body": "Sehr geehrte Damen und Herren,\n\nmit großem Interesse habe ich Ihre Ausschreibung für die Position {{position}} am {{hospital}} gelesen.\n\nHiermit möchte ich mich auf die ausgeschriebene Stelle bewerben.\n\nMeine Bewerbungsunterlagen finden Sie im Anhang.\n\nÜber die Möglichkeit eines persönlichen Gesprächs freue ich mich sehr.\n\nMit freundlichen Grüßen\n\n{{candidateName}}"
+  }
+]

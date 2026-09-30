@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cv",
+    "name": "CV.pdf",
+    "path": "/documents/CV.pdf",
+    "selected": true
+  },
+  {
+    "id": "approbation",
+    "name": "Approbation.pdf",
+    "path": "/documents/Approbation.pdf",
+    "selected": true
+  },
+  {
+    "id": "certificates",
+    "name": "Zeugnisse.pdf",
+    "path": "/documents/Zeugnisse.pdf",
+    "selected": false
+  }
+]
